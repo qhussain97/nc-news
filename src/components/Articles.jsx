@@ -23,6 +23,7 @@ const Articles = () => {
 
     return (
         <ul className="Articles_list">
+            <h2>Articles:</h2>
             {articles.map((article) => (
                 <li className="Articles_card" key={article.article_id}>
                     <p>{article.title}</p>

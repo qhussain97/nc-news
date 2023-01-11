@@ -16,11 +16,11 @@ const Nav = () => {
         <nav className="Nav">
             {topics.map((topic) => (
             <Link
-                to={`/news/${topic.topic_slug}`}
+                to={`/news/${topic.slug}`}
                 className="Nav_link"
-                key={topic.topic_slug}
+                key={topic.slug}
                 >
-                {topic.topic_slug}    
+                {topic.slug}    
             </Link>
             ))}
             <Link to="/users" className="Nav_link">

@@ -32,3 +32,10 @@ export const getComments = (article_id) => {
             return data.comments
         })
 }
+
+export const articleVotesByArtcleId = (article_id, increment) => {
+    return newsApi.patch(`/api/articles/${article_id}`, { vote: increment,})
+        .then((res) => {
+            console.log(res)
+        });
+};

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../utils/api";
 import Comments from "../components/Comments";
+import Votes from "../components/Votes";
 
 const SingleArticle = () => {
     const [article, setArticle] = useState({});
@@ -28,10 +29,11 @@ if (isLoading)
     return (
         <main>
             <article>
-            <h2>{article.title}</h2>
-            <h2>{article.topic}</h2>
-            <h2>{article.author}</h2>
+            <h2>Title: {article.title}</h2>
+            <h2>Topic:{article.topic}</h2>
+            <h2>Author: {article.author}</h2>
             <p>{article.body}</p>
+            <Votes votes={article.votes} article_id={article.article_id}/>
             </article>
             
                 <Comments article_id={article_id} />

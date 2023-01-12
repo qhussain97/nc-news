@@ -1,6 +1,28 @@
 .App {
   text-align: center;
 }
+.Header_Link {
+  color:rgb(239, 10, 10);
+  align-items: center;
+  font-size: x-large;
+}
+.Header {
+  color:rgb(18, 18, 234);
+  font-size:x-large;
+}
+
+.Nav {
+  color:rgb(239, 10, 10);
+
+}
+
+.Nav_link {
+  color:rgb(239, 10, 10);
+}
+
+.Articles_list {
+  color:rgb(18, 18, 234)
+}
 
 .App-logo {
   height: 40vmin;
@@ -14,7 +36,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #353942;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

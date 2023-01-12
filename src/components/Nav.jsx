@@ -20,12 +20,14 @@ const Nav = () => {
                 className="Nav_link"
                 key={topic.slug}
                 >
-                {topic.slug}    
+                <span> |      {topic.slug}    </span>
             </Link>
             ))}
+            <span> | </span>
             <Link to="/users" className="Nav_link">
                 Users
             </Link>
+            <span> | </span>
         </nav>
     );
 };

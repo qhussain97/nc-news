@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../utils/api";
+import Comments from "../components/Comments";
 
 const SingleArticle = () => {
     const [article, setArticle] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const { article_id } = useparams();
+    const { article_id } = useParams();
+    
 
     useEffect(() => {
+        setIsLoading(true);
         getArticleById(article_id).then((articleFromApi) => {
             setArticle(articleFromApi);
             setIsLoading(false);
         });
     }, [article_id]);
 
-    if (isLoading)
+    
+if (isLoading)
         return (
             <main>
                 <p className="Loading">Loading...</p>
@@ -23,11 +27,18 @@ const SingleArticle = () => {
 
     return (
         <main>
-            <h2>Article: {article_id}</h2>
+            <article>
             <h2>{article.title}</h2>
             <h2>{article.topic}</h2>
+            <h2>{article.author}</h2>
             <p>{article.body}</p>
+            </article>
+            
+                <Comments article_id={article_id} />
+        
         </main>
+
+
     )
 }
 
